@@ -59,6 +59,7 @@ main {
     border-radius: 50%;
     margin-right: 3em;
     overflow: clip;
+    object-fit: cover;
 }
 
 /***  Sort Box ***/
