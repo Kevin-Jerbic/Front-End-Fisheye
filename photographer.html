@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fisheye - photographe</title>
+        <link rel="icon" type="image/png" href="assets/favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/98dc963ba8.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html" target="_self" aria-label="Accéder à la page d'accueil">
+                <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+            </a>
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+        <main id="main">
+            <section class="photograph_header" data-testid="photograph-header"></section>
+            <section class="photograph_medias_section" data-testid="photograph-medias-section"></section>
+        </main>
+        <div id="contact_modal" data-testid="modal-contact"></div>
+        <div id="carousel_modal" data-testid="modal-carousel"></div>
+
+        <script type="module" src="scripts/pages/photographer.js"></script>
+    </body>
 </html>

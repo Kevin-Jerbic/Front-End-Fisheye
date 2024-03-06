@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fisheye</title>
         <link rel="icon" type="image/png" href="assets/favicon.png" />
         <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
-        <title>Fisheye</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/98dc963ba8.js" crossorigin="anonymous"></script>
     </head>
+
     <body>
         <header>
-            <img src="assets/images/logo.png" class="logo" alt="fisheye logo" />
+            <a href="index.html" target="_self" aria-label="Accéder à la page d'accueil">
+                <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+            </a>
             <h1>Nos photographes</h1>
         </header>
         <main id="main">
-            <div class="photographer_section"></div>
+            <section class="photographer_section">
+                <h2 class="sr-only">Nos photographes</h2>
+            </section>
         </main>
-        <script src="scripts/templates/photographer.js"></script>
-        <script src="scripts/pages/index.js"></script>
+        <script type="module" src="./scripts/pages/index.js"></script>
     </body>
 </html>
