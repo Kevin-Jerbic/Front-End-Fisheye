@@ -14,7 +14,7 @@ function onKeyUp(e) {
 }
 
 // Displays a carousel modal with specified content
-function displayCarousel(href, title, parent, gallery, galleryTitle) {
+const displayCarousel = (href, title, parent, gallery, galleryTitle) => {
     const $carouselWrapper = document.getElementById("carousel_modal");
     $carouselWrapper.style.display = "block";
     document.body.classList.add("modal-open");
