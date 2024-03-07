@@ -3,7 +3,6 @@ export class PhotographerHeader {
         this.photographer = photographer;
     }
     render() {
-        //const photographerData = new Photographer(this.photographer);
         const photographerData = this.photographer;
 
         const photographHeader = `

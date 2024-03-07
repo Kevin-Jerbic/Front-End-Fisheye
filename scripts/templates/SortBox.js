@@ -41,6 +41,7 @@ export class SortBox {
     `;
     }
 
+    // Reorders the select imtes in the menu bases on the selected text
     reorderSelectItems(selectedText) {
         const $selectMenu = this.$wrapper.querySelector(".select_items_menu");
         const $selectItems = $selectMenu.querySelectorAll(".select_item");
