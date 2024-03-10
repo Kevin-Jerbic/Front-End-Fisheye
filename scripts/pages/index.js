@@ -13,7 +13,7 @@ class Index {
     async main() {
         const photographersData = await this.photographersApi.getPhotographersData();
 
-        const photographers = photographersData.photographers;
+        const photographers = photographersData.photographers; 
 
         photographers
             .map(photographer => new Photographer(photographer))
