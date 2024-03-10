@@ -7,7 +7,7 @@ class Index {
         this.$photographersWrapper = document.querySelector(".photographer_section");
 
         // Instance of the PhotographersApi class for fetching photographer data from the specified JSON file.
-        this.photographersApi = new PhotographersApi("../../data/photographers.json");
+        this.photographersApi = new PhotographersApi("data/photographers.json");
     }
 
     async main() {
