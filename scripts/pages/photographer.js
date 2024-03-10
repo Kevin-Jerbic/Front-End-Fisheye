@@ -15,7 +15,7 @@ class PhotographerPage {
         this.photographerId = parseInt(this.params.get("id"));
 
         // Instance of the PhotographersApi class for fetching photographer data from the specified JSON file.
-        this.photographersApi = new PhotographersApi("../../data/photographers.json");
+        this.photographersApi = new PhotographersApi("data/photographers.json");
     }
 
     async main() {
