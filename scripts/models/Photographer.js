@@ -32,6 +32,6 @@ export class Photographer {
     }
 
     get portrait() {
-        return `/assets/photographers/PhotographersPhotos/${this._portrait}`;
+        return `./assets/photographers/PhotographersPhotos/${this._portrait}`;
     }
 }

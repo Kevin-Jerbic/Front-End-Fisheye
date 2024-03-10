@@ -47,7 +47,7 @@ export class Media {
                 // Get the first word (first name)
                 let photographerFirstName = this._photographerName.split(" ")[0];
                 
-                file = `/assets/photographers/${photographerFirstName}/${this[`_${type}`]}`;
+                file = `./assets/photographers/${photographerFirstName}/${this[`_${type}`]}`;
             }
             return file;
         }
