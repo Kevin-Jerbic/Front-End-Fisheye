@@ -1,4 +1,4 @@
-function displayModal() {
+const displayModal = () => {
     const $modalWrapper = document.getElementById("contact_modal");
     $modalWrapper.style.display = "block";
     const $contactModal = document.querySelector(".modal");
@@ -11,7 +11,7 @@ function displayModal() {
     $contactModal.addEventListener("keyup", onKeyUpContact);
 }
 
-function closeModal() {
+const closeModal = () => {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
     document.body.classList.remove("modal-open");
@@ -19,7 +19,7 @@ function closeModal() {
 }
 
 // Sets up keyboard navigation within a form modal.
-function focusContactModal(form) {
+const focusContactModal = (form) => {
     const $contactModal = form;
 
     $contactModal.addEventListener("keydown", event => {
@@ -39,7 +39,7 @@ function focusContactModal(form) {
         }
     });
 }
-function onKeyUpContact(e) {
+const onKeyUpContact = (e) => {
     if (e.key === "Escape") {
         closeModal();
     }

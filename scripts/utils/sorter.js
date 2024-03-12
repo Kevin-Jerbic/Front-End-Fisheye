@@ -1,4 +1,4 @@
-function sortBy(selectValue, medias) {
+const sortBy = (selectValue, medias) => {
     let arr = medias.slice();
 
     switch (selectValue) {
@@ -22,7 +22,7 @@ function sortBy(selectValue, medias) {
     return arr;
 }
 
-function onSelectChange(selectElement, instancePhotograph) {
+const onSelectChange = (selectElement, instancePhotograph) => {
     let $parentContainer = document.querySelector(".photograph_medias_section");
     let $articles = document.querySelectorAll(".photograph_media_item");
 

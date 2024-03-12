@@ -3,7 +3,7 @@ import { Carousel } from "../templates/Carousel.js";
 let carouselInstance;
 
 // Handles the keyup event for the carousel
-function onKeyUp(e) {
+const onKeyUp = (e) => {
     if (e.key === "Escape") {
         closeCarousel();
     } else if (e.key === "ArrowLeft") {
@@ -30,7 +30,7 @@ const displayCarousel = (href, title, parent, gallery, galleryTitle) => {
     }
 }
 
-function closeCarousel() {
+const closeCarousel = () => {
     const $carousel = document.getElementById("carousel_modal");
     $carousel.style.display = "none";
     document.body.classList.remove("modal-open");
@@ -38,7 +38,7 @@ function closeCarousel() {
 }
 
 // Set up keyboard navigation within a carousel modal.
-function focusCarouselModal(modal) {
+const focusCarouselModal = (modal) => {
     const $carouselModal = modal;
 
     $carouselModal.addEventListener("keydown", event => {
