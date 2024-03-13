@@ -14,7 +14,7 @@ export class Carousel {
         if (!this.$wrapper) {
             this.$wrapper = document.createElement("div");
             this.$wrapper.classList.add("carousel_content");
-            this.$wrapper.setAttribute("tabindex", "-1");
+            this.$wrapper.setAttribute("tabindex", "0");
             this.$wrapper.setAttribute("role", "dialog");
             this.$wrapper.setAttribute("aria-modal", "true");
             this.$wrapper.setAttribute("aria-label", "vue rapprochée de l'image");

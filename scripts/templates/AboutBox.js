@@ -6,7 +6,7 @@ export class AboutBox {
 
     render() {
         const $photographAboutDiv = document.createElement("div");
-        $photographAboutDiv.setAttribute("tabindex", "0");
+        //$photographAboutDiv.setAttribute("tabindex", "0");
         $photographAboutDiv.setAttribute("aria-label", "Popularité et tarif journalier du photographe");
         $photographAboutDiv.classList.add("photograph_about");
 
