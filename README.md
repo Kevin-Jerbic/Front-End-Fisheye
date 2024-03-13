@@ -1,6 +1,9 @@
-# Base de code du projet P6 - Parcours Front-end
+# FishEye
 
-## Démarrer le projet
+## Projet 4
 
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
+*Créez un site accessible pour une plateforme de photographes* : https://kevin-jerbic.github.io/Front-End-Fisheye/
+
+![Screenshot_projet](./screenshot_projet.png)
+
 
