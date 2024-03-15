@@ -7,9 +7,9 @@ export class PhotographerHeader {
 
         const photographHeader = `
         <div class="photographer_infos_container" data-testid="photographer-infos-container">
-          <h1>${photographerData.name}</h1>
-          <h2>${photographerData.city}, ${this.photographer.country}</h2>
-          <p>${photographerData.tagline}</p>
+          <h1 tabindex="0">${photographerData.name}</h1>
+          <h2 tabindex="0">${photographerData.city}, ${this.photographer.country}</h2>
+          <p tabindex="0">${photographerData.tagline}</p>
         </div>  
         <div class="photographer_button_container">
            <button class="contact_button" aria-labelledby="contact-name" >Contactez-moi</button>
