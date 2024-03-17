@@ -18,7 +18,7 @@ export class PhotographerPageTemplate {
         this.photographerName = photographerName;
         this.$countDisplay = null;
 
-        // Total Number of Likes
+        // Nombre total de likes
         this.likes = this.medias.map(media => media.likes).reduce((a, b) => a + b, 0);
 
         // Observable & Observer
@@ -35,6 +35,7 @@ export class PhotographerPageTemplate {
         $contact_button.addEventListener("click", displayModal);
     }
 
+    // Filtre
     createPhotographSortBox(parent, instancePhotograph) {
         const Template = new SortBox(instancePhotograph);
         const sortBoxElement = Template.render();
@@ -60,13 +61,13 @@ export class PhotographerPageTemplate {
         const renderedTemplate = Template.render();
         parent.appendChild(renderedTemplate);
 
-        //  The DOM element that displays the likes count.
+        // L'élément DOM qui affiche le nombre de likes
         this.$countDisplay = renderedTemplate.querySelector(".likes-counter");
 
-        // The observer that updates the likes display when the likes count changes.
+        // Mise à jour des likes (like, unlike)
         this.displayLikes = new LikesDisplay(this.likes, this.$countDisplay);
 
-        // Connect the observer (displayLikes) to the observable (counterLikes)
+        // Relie le nombre de like à celui d'afficher
         this.counterLikes.subscribe(this.displayLikes);
     }
 
@@ -75,11 +76,13 @@ export class PhotographerPageTemplate {
         parent.appendChild(Template.render());
     }
 
+    // Recherche les liens avec un type image ou video + Affichage carousel si click
     createPhotographCarousel(parent) {
         const links = Array.from(document.querySelectorAll(`a[href$=".jpg"], a[href$=".mp4"]`));
         const gallery = [];
         const galleryTitle = [];
 
+        // Récupère le href et le titre des médias
         links.forEach(link => {
             const href = link.getAttribute("href");
             const title = link.getAttribute("title");
@@ -88,6 +91,7 @@ export class PhotographerPageTemplate {
                 gallery.push(href);
                 galleryTitle.push(title);
 
+                // Affichage carousel si un lien est cliqué
                 link.addEventListener("click", e => {
                     e.preventDefault();
                     displayCarousel(href, title, parent, gallery, galleryTitle);

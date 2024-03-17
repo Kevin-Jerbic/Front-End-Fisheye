@@ -1,6 +1,7 @@
 import { Video } from "../models/Video.js";
 import { Image } from "../models/Image.js";
 
+// Factory pattern
 export class MediaFactory {
     constructor(data) {
         if (data.video) {

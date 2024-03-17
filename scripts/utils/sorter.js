@@ -26,11 +26,11 @@ const onSelectChange = (selectElement, instancePhotograph) => {
     let $parentContainer = document.querySelector(".photograph_medias_section");
     let $articles = document.querySelectorAll(".photograph_media_item");
 
-    // Remove all existing articles from the media section
+    // Supprime tous les médias
     $articles.forEach(article => {
         article.remove();
     });
-    // Creates new articles based on the selection
+    // Ajoute de nouveaux médias en fonction du choix de <select>
     instancePhotograph.createPhotographMediaContent($parentContainer, selectElement);
 }
 

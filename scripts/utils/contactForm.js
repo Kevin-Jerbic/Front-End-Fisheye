@@ -18,7 +18,7 @@ const closeModal = () => {
     document.removeEventListener("keyup", onKeyUpContact);
 }
 
-// Sets up keyboard navigation within a form modal.
+// Gère la navigation au clavier
 const focusContactModal = (form) => {
     const $contactModal = form;
 
@@ -29,6 +29,7 @@ const focusContactModal = (form) => {
             const firstElement = focusableElements[0];
             const lastElement = focusableElements[focusableElements.length - 1];
 
+            // Configure la navigation avec Maj + Tab (élément précédent)
             if (!event.shiftKey && document.activeElement === lastElement) {
                 event.preventDefault();
                 firstElement.focus();

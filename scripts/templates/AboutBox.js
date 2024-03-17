@@ -1,3 +1,5 @@
+// Représente le nombre de likes et le prix
+
 export class AboutBox {
     constructor(likes, price) {
         this.likes = likes;

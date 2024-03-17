@@ -2,6 +2,7 @@ import PhotographersApi from "../api/Api.js";
 import { FilterData } from "../utils/FilterData.js";
 import { PhotographerPageTemplate } from "../templates/PhotographerPageTemplate.js";
 
+// Gère l'affichage de la page
 class PhotographerPage {
     constructor() {
         this.$photographersWrapper = document.querySelector(".photograph_header");
@@ -10,22 +11,22 @@ class PhotographerPage {
         this.$photographerModal = document.getElementById("contact_modal");
         this.$photographCarousel = document.getElementById("carousel_modal");
 
-        // Retrieves the ID parameter passed on the page
+        // Récupère le paramètre ID passé en url
         this.params = new URL(document.location).searchParams;
         this.photographerId = parseInt(this.params.get("id"));
 
-        // Instance of the PhotographersApi class for fetching photographer data from the specified JSON file.
+        // Récupère les données des photographes via le fichier JSON
         this.photographersApi = new PhotographersApi("data/photographers.json");
     }
 
     async main() {
-        // Get data from API
+        // Récupère les données depuis l'api
         const datas = await this.photographersApi.getPhotographersData();
 
-        // All "photographers" data
+        // Toutes les données des photographes
         const photographersDatas = datas.photographers;
 
-        // All "media" data
+        // Tous les médias des photographes
         const mediasDatas = datas.media;
 
         const PhotographFilter = new FilterData(this.photographerId, photographersDatas, mediasDatas);
@@ -43,7 +44,7 @@ class PhotographerPage {
 
         const Template = new PhotographerPageTemplate(PhotographById, MediasById, photographerName);
 
-        // Call the methods of the class for creating each visual part of the page
+        // Appelle des méthodes pour créer les différentes parties de la page
         Template.createPhotographHeaderContent(this.$photographersWrapper);
         Template.createPhotographSortBox(this.$photographerMediasWrapper, Template);
 
@@ -57,6 +58,6 @@ class PhotographerPage {
     }
 }
 
-// Create an instance of PhotographerPage and initialize the page
+// Crée une instance et initialise la page
 const pagePhotographe = new PhotographerPage();
 pagePhotographe.main();

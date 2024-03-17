@@ -41,14 +41,14 @@ export class SortBox {
     `;
     }
 
-    // Reorders the select items in the menu bases on the selected text
+    // Organise les médias en fonction du filtre choisi
     reorderSelectItems(selectedText) {
         const $selectMenu = this.$wrapper.querySelector(".select_items_menu");
         const $selectItems = $selectMenu.querySelectorAll(".select_item");
 
         const newOrder = this.sortedButtons.slice();
 
-        // Put the selected item at the top of the list
+        // Place le filtre choisi en haut de la liste <select>
         const selectedIndex = newOrder.indexOf(selectedText);
         if (selectedIndex !== -1) {
             newOrder.splice(selectedIndex, 1);
@@ -57,6 +57,7 @@ export class SortBox {
 
         $selectMenu.innerHTML = "";
         newOrder.forEach(text => {
+            // trim() retire les espaces blancs en début et fin de chaine
             const button = Array.from($selectItems).find(item => item.textContent.trim() === text);
             if (button) {
                 $selectMenu.appendChild(button);
@@ -74,14 +75,14 @@ export class SortBox {
             const $selectItems = $selectMenu.querySelectorAll(".select_item");
             const $selectedButton = this.$wrapper.querySelector(".select_item_selected");
 
-            // Hide all spans
+            // Cache tous les <span>
             const allSpans = $selectMenu.querySelectorAll(".fa-solid");
             allSpans.forEach(span => {
                 span.style.display = "none";
             });
 
             if ($selectMenu.style.display === "none") {
-                // Display the first span when menu is open
+                // Affiche le premier <span> lorsque le menu est ouvert
                 const firstItemSpan = $selectItems[0].querySelector(".fa-solid");
                 if (firstItemSpan) {
                     firstItemSpan.style.display = "inline-block";
@@ -117,6 +118,7 @@ export class SortBox {
             }
         };
 
+        // Si clique en dehors du <select> ferme le menu
         const handleOutsideClick = event => {
             if (!$selectMenu.contains(event.target) && !$selectedButton.contains(event.target)) {
                 closeMenu();
@@ -136,7 +138,7 @@ export class SortBox {
         $selectedButton.addEventListener("click", toggleSelectItems);
         document.body.addEventListener("keydown", handleEscapeKey);
 
-        // Update button text whith the new selected
+        // Une fois le filtre choisi, ferme le menu et mets à jour le <select> puis affiche les médias dans l'ordre
         $selectItems.forEach(item => {
             item.addEventListener("click", () => {
                 const text = item.textContent;
@@ -153,6 +155,7 @@ export class SortBox {
             });
         });
 
+        // Gère la navigation au clavier
         const handleArrowKeys = event => {
             if ($selectMenu.style.display === "block") {
                 const $selectItems = $selectMenu.querySelectorAll(".select_item");

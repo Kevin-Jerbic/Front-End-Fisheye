@@ -2,7 +2,7 @@ import { Carousel } from "../templates/Carousel.js";
 
 let carouselInstance;
 
-// Handles the keyup event for the carousel
+// Gère la navigation au clavier sur 3 touches
 const onKeyUp = (e) => {
     if (e.key === "Escape") {
         closeCarousel();
@@ -13,7 +13,7 @@ const onKeyUp = (e) => {
     }
 }
 
-// Displays a carousel modal with specified content
+// Affichage du carroussel avec le média choisi
 const displayCarousel = (href, title, parent, gallery, galleryTitle) => {
     const $carouselWrapper = document.getElementById("carousel_modal");
     $carouselWrapper.style.display = "block";
@@ -37,7 +37,7 @@ const closeCarousel = () => {
     document.removeEventListener("keyup", onKeyUp);
 }
 
-// Set up keyboard navigation within a carousel modal.
+// Gère le focus du carroussel pour permettre une bonne navigation au clavier avec Tab
 const focusCarouselModal = (modal) => {
     const $carouselModal = modal;
 
@@ -47,6 +47,7 @@ const focusCarouselModal = (modal) => {
             const firstElement = focusableElements[0];
             const lastElement = focusableElements[focusableElements.length - 1];
 
+            // Configure la navigation avec Maj + Tab (élément précédent)
             if (!event.shiftKey && document.activeElement === lastElement) {
                 event.preventDefault();
                 firstElement.focus();

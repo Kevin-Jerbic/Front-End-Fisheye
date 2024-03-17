@@ -5,7 +5,7 @@ export class FilterData {
         this.photographerMedia = dataMedia;
     }
 
-    // Get data of a specific photographer based on their ID
+    // Récupère les données d'un photographe en fonction de l'ID
     async getDatasPhotographerById(photographerId) {
         const photographers = this.photographerData;
         const photographer = photographers.find(p => p.id === photographerId);
@@ -16,7 +16,7 @@ export class FilterData {
         }
     }
 
-    // Get media associated with a specific photographer based on their ID 
+    // Récupère les médias associés à un photographe spécifique
     async getMediaByPhotographerId(photographerId) {
         const mediaData = this.photographerMedia;
 

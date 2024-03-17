@@ -45,8 +45,7 @@ export class Modal {
         return $photographerModal;
     }
 
-    // A peaufiner si nécessaire.
-    // Sinon récupérer code projet précédent
+    // Simple vérification, à peaufiner
     handleFormSubmit(event) {
         event.preventDefault();
 
