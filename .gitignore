@@ -1,0 +1,5 @@
+# Ignorer les fichiers concernant EsLint
+/node_modules
+.eslintrc.js
+package-lock.json
+package.json
